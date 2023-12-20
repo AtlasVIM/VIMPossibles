@@ -92,3 +92,20 @@
     color: white;
     transform: rotateY(180deg);
   }
+
+  #spy-card-details-container {
+    background-color: #bbb;
+    width: 100%;
+    display: flex;
+    align-content: space-around;
+    justify-content: space-around;
+    flex-direction: row;
+    
+  }
+
+  #spy-details-img {
+    border: 20px;
+    border-radius: 20px;
+    border-color: black;
+    padding: 10px;
+  }

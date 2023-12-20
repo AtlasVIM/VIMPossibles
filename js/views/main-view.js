@@ -12,8 +12,8 @@ internals.createSpyIcon = function(spy) {
     <div class="spy-card-back">
     <h1> ${spy.name} </h1>
     <p> SPECIALTY: ${spy.specialty}</p>
-    <p> Description: <div> ${spy.description}</div></p>
-    <button type="button" class="btn btn-danger" id="hire-button-${spy.id}"> HIRE!
+    <button type="button" class="btn btn-danger" id="hire-button-${spy.id}"> 
+    HIRE!
     </button>
     </div>
     </div>
@@ -21,7 +21,27 @@ internals.createSpyIcon = function(spy) {
 }
 
 internals.createSpyCardDetails = function(spy) {
-    return `<div id="spy-card-detailed"> `
+    return `<div id="spy-card-details-container">
+    <img id="spy-details-img" width=300 height=400 src="${spy.img}"/>
+    <div id="spy-card-details">
+    <span id="spy-details">
+    <h1> ${spy.name} </h1>
+    <p><strong> Specialty: ${spy.specialty}</strong></p>
+    <p> Description: <div> ${spy.description}</div></p>
+    </span>
+    </div>
+    <form>
+    <h2>REQUEST AN AGENT:</h2>
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname"><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname"><br>  
+    <label for="request-description">Request Description:</label><br>
+    <textarea type="text" id="request-description" name="request-description"></textarea><br>
+    <button type="button" id="request-agent-button" class="btn">REQUEST</button>
+    </form>
+    </div>
+    `
 }
 
 internals.createFilter = function(spy) {
@@ -30,11 +50,11 @@ internals.createFilter = function(spy) {
 
 
 internals.bindHireButton = function(spy) {
-    console.log(spy.id)
+    const button = document.getElementById(`hire-button-${spy.id}`);
 
-    $(`#hire-button-1`).click(function() {
+    button.addEventListener('click',() => {
         return internals.renderCardDetails(spy)
-    });
+});
 }
 
 internals.renderBackButton = function() {
@@ -50,9 +70,9 @@ internals.renderFilterBar = function() {
 }
 
 internals.bindBackButton = function() {
-    $('#card-container').append(internals.renderBackButton());
-    $('#back-button').click( function() {
-        $('#card-container').empty();
+    $('#spy-card-details-container').prepend(internals.renderBackButton());
+    $('#back-button').on('click', function() {
+        $('#spy-card-details-container').empty();
         return service.getSpies();
     })
 }
@@ -64,8 +84,8 @@ internals.renderCardDetails = function(spy) {
         const page =$('#card-container')
         page.empty();
         
+        page.append(internals.createSpyCardDetails(spy));
         internals.bindBackButton();
-        //render card
 
     return 
 }
@@ -74,10 +94,10 @@ internals.renderCardDetails = function(spy) {
 internals.renderSpy = function(spy) {
     internals.spyCard = internals.createSpyIcon(spy);
     internals.spyFilter = internals.createFilter(spy);
-    internals.bindHireButton(spy);
     $('#card-container').append(internals.spyCard);
     $('#filter-parameter').append(internals.spyFilter);
 
+    internals.bindHireButton(spy);
 }
 
 externals.prependFilterBar = function() {
