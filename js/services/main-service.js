@@ -5,31 +5,23 @@ const internals = {}
 const externals = {}
 
 internals.spies = [
-    {name: 'Kim Possible', specialty: 'Baddassery', img: 'https://m.media-amazon.com/images/M/MV5BNjVmZDY3ODItOTZiOC00NjAwLTkxMjEtMDQxMzMwMDMzNDJkXkEyXkFqcGdeQXVyMTI1Mzg0ODA5._V1_FMjpg_UX1000_.jpg', description: 'test'},
-    {name: 'Tim Possible', specialty: 'Love Problems', img: 'https://m.media-amazon.com/images/M/MV5BNjVmZDY3ODItOTZiOC00NjAwLTkxMjEtMDQxMzMwMDMzNDJkXkEyXkFqcGdeQXVyMTI1Mzg0ODA5._V1_FMjpg_UX1000_.jpg', description: 'test'},
-    {name: 'Kim Possible', specialty: 'Baddassery', img: 'https://m.media-amazon.com/images/M/MV5BNjVmZDY3ODItOTZiOC00NjAwLTkxMjEtMDQxMzMwMDMzNDJkXkEyXkFqcGdeQXVyMTI1Mzg0ODA5._V1_FMjpg_UX1000_.jpg', description: 'test'},
-    {name: 'Kim Possible', specialty: 'Baddassery', img: 'https://m.media-amazon.com/images/M/MV5BNjVmZDY3ODItOTZiOC00NjAwLTkxMjEtMDQxMzMwMDMzNDJkXkEyXkFqcGdeQXVyMTI1Mzg0ODA5._V1_FMjpg_UX1000_.jpg', description: 'test'},
-    {name: 'Kim Possible', specialty: 'Baddassery', img: 'https://m.media-amazon.com/images/M/MV5BNjVmZDY3ODItOTZiOC00NjAwLTkxMjEtMDQxMzMwMDMzNDJkXkEyXkFqcGdeQXVyMTI1Mzg0ODA5._V1_FMjpg_UX1000_.jpg', description: 'test'},
-    {name: 'Kim Possible', specialty: 'Baddassery', img: 'https://m.media-amazon.com/images/M/MV5BNjVmZDY3ODItOTZiOC00NjAwLTkxMjEtMDQxMzMwMDMzNDJkXkEyXkFqcGdeQXVyMTI1Mzg0ODA5._V1_FMjpg_UX1000_.jpg', description: 'test'},
-    {name: 'Kim Possible', specialty: 'Baddassery', img: 'https://m.media-amazon.com/images/M/MV5BNjVmZDY3ODItOTZiOC00NjAwLTkxMjEtMDQxMzMwMDMzNDJkXkEyXkFqcGdeQXVyMTI1Mzg0ODA5._V1_FMjpg_UX1000_.jpg', description: 'test'},
-    {name: 'Kim Possible', specialty: 'Baddassery', img: 'https://m.media-amazon.com/images/M/MV5BNjVmZDY3ODItOTZiOC00NjAwLTkxMjEtMDQxMzMwMDMzNDJkXkEyXkFqcGdeQXVyMTI1Mzg0ODA5._V1_FMjpg_UX1000_.jpg', description: 'test'},
-    {name: 'Kim Possible', specialty: 'Baddassery', img: 'https://m.media-amazon.com/images/M/MV5BNjVmZDY3ODItOTZiOC00NjAwLTkxMjEtMDQxMzMwMDMzNDJkXkEyXkFqcGdeQXVyMTI1Mzg0ODA5._V1_FMjpg_UX1000_.jpg', description: 'test'},
-    {name: 'Kim Possible', specialty: 'Baddassery', img: 'https://m.media-amazon.com/images/M/MV5BNjVmZDY3ODItOTZiOC00NjAwLTkxMjEtMDQxMzMwMDMzNDJkXkEyXkFqcGdeQXVyMTI1Mzg0ODA5._V1_FMjpg_UX1000_.jpg', description: 'test'},
-    {name: 'Kim Possible', specialty: 'Baddassery', img: 'https://m.media-amazon.com/images/M/MV5BNjVmZDY3ODItOTZiOC00NjAwLTkxMjEtMDQxMzMwMDMzNDJkXkEyXkFqcGdeQXVyMTI1Mzg0ODA5._V1_FMjpg_UX1000_.jpg', description: 'test'},
-    {name: 'Kim Possible', specialty: 'Baddassery', img: 'https://m.media-amazon.com/images/M/MV5BNjVmZDY3ODItOTZiOC00NjAwLTkxMjEtMDQxMzMwMDMzNDJkXkEyXkFqcGdeQXVyMTI1Mzg0ODA5._V1_FMjpg_UX1000_.jpg', description: 'test'},
-    {name: 'Kim Possible', specialty: 'Baddassery', img: 'https://m.media-amazon.com/images/M/MV5BNjVmZDY3ODItOTZiOC00NjAwLTkxMjEtMDQxMzMwMDMzNDJkXkEyXkFqcGdeQXVyMTI1Mzg0ODA5._V1_FMjpg_UX1000_.jpg', description: 'test'},
-    {name: 'Kim Possible', specialty: 'Baddassery', img: 'https://m.media-amazon.com/images/M/MV5BNjVmZDY3ODItOTZiOC00NjAwLTkxMjEtMDQxMzMwMDMzNDJkXkEyXkFqcGdeQXVyMTI1Mzg0ODA5._V1_FMjpg_UX1000_.jpg', description: 'test'},
-    {name: 'Kim Possible', specialty: 'Baddassery', img: 'https://m.media-amazon.com/images/M/MV5BNjVmZDY3ODItOTZiOC00NjAwLTkxMjEtMDQxMzMwMDMzNDJkXkEyXkFqcGdeQXVyMTI1Mzg0ODA5._V1_FMjpg_UX1000_.jpg', description: 'test'},
-    {name: 'Kim Possible', specialty: 'Baddassery', img: 'https://m.media-amazon.com/images/M/MV5BNjVmZDY3ODItOTZiOC00NjAwLTkxMjEtMDQxMzMwMDMzNDJkXkEyXkFqcGdeQXVyMTI1Mzg0ODA5._V1_FMjpg_UX1000_.jpg', description: 'test'},
-    {name: 'Kim Possible', specialty: 'Baddassery', img: 'https://m.media-amazon.com/images/M/MV5BNjVmZDY3ODItOTZiOC00NjAwLTkxMjEtMDQxMzMwMDMzNDJkXkEyXkFqcGdeQXVyMTI1Mzg0ODA5._V1_FMjpg_UX1000_.jpg', description: 'test'},
-    {name: 'Kim Possible', specialty: 'Baddassery', img: 'https://m.media-amazon.com/images/M/MV5BNjVmZDY3ODItOTZiOC00NjAwLTkxMjEtMDQxMzMwMDMzNDJkXkEyXkFqcGdeQXVyMTI1Mzg0ODA5._V1_FMjpg_UX1000_.jpg', description: 'test'},
-    {name: 'Kim Possible', specialty: 'Baddassery', img: 'https://m.media-amazon.com/images/M/MV5BNjVmZDY3ODItOTZiOC00NjAwLTkxMjEtMDQxMzMwMDMzNDJkXkEyXkFqcGdeQXVyMTI1Mzg0ODA5._V1_FMjpg_UX1000_.jpg', description: 'test'},
-    {name: 'Kim Possible', specialty: 'Baddassery', img: 'https://m.media-amazon.com/images/M/MV5BNjVmZDY3ODItOTZiOC00NjAwLTkxMjEtMDQxMzMwMDMzNDJkXkEyXkFqcGdeQXVyMTI1Mzg0ODA5._V1_FMjpg_UX1000_.jpg', description: 'test'},
-    {name: 'Kim Possible', specialty: 'Baddassery', img: 'https://m.media-amazon.com/images/M/MV5BNjVmZDY3ODItOTZiOC00NjAwLTkxMjEtMDQxMzMwMDMzNDJkXkEyXkFqcGdeQXVyMTI1Mzg0ODA5._V1_FMjpg_UX1000_.jpg', description: 'test'},
-    {name: 'Kim Possible', specialty: 'Baddassery', img: 'https://m.media-amazon.com/images/M/MV5BNjVmZDY3ODItOTZiOC00NjAwLTkxMjEtMDQxMzMwMDMzNDJkXkEyXkFqcGdeQXVyMTI1Mzg0ODA5._V1_FMjpg_UX1000_.jpg', description: 'test'},
+    {id:1, name: 'Kim Possible', specialty: 'Baddassery', img: 'https://m.media-amazon.com/images/M/MV5BNjVmZDY3ODItOTZiOC00NjAwLTkxMjEtMDQxMzMwMDMzNDJkXkEyXkFqcGdeQXVyMTI1Mzg0ODA5._V1_FMjpg_UX1000_.jpg', description: 'test'},
+    {id:2, name: 'Kim Possible', specialty: 'Baddassery', img: 'https://m.media-amazon.com/images/M/MV5BNjVmZDY3ODItOTZiOC00NjAwLTkxMjEtMDQxMzMwMDMzNDJkXkEyXkFqcGdeQXVyMTI1Mzg0ODA5._V1_FMjpg_UX1000_.jpg', description: 'test'},
+    {id:3, name: 'Kim Possible', specialty: 'Baddassery', img: 'https://m.media-amazon.com/images/M/MV5BNjVmZDY3ODItOTZiOC00NjAwLTkxMjEtMDQxMzMwMDMzNDJkXkEyXkFqcGdeQXVyMTI1Mzg0ODA5._V1_FMjpg_UX1000_.jpg', description: 'test'},
+    {id:4, name: 'Kim Possible', specialty: 'Baddassery', img: 'https://m.media-amazon.com/images/M/MV5BNjVmZDY3ODItOTZiOC00NjAwLTkxMjEtMDQxMzMwMDMzNDJkXkEyXkFqcGdeQXVyMTI1Mzg0ODA5._V1_FMjpg_UX1000_.jpg', description: 'test'},
+    {id:5, name: 'Kim Possible', specialty: 'Baddassery', img: 'https://m.media-amazon.com/images/M/MV5BNjVmZDY3ODItOTZiOC00NjAwLTkxMjEtMDQxMzMwMDMzNDJkXkEyXkFqcGdeQXVyMTI1Mzg0ODA5._V1_FMjpg_UX1000_.jpg', description: 'test'},
+    {id:6, name: 'Kim Possible', specialty: 'Baddassery', img: 'https://m.media-amazon.com/images/M/MV5BNjVmZDY3ODItOTZiOC00NjAwLTkxMjEtMDQxMzMwMDMzNDJkXkEyXkFqcGdeQXVyMTI1Mzg0ODA5._V1_FMjpg_UX1000_.jpg', description: 'test'},
+    {id:7, name: 'Kim Possible', specialty: 'Baddassery', img: 'https://m.media-amazon.com/images/M/MV5BNjVmZDY3ODItOTZiOC00NjAwLTkxMjEtMDQxMzMwMDMzNDJkXkEyXkFqcGdeQXVyMTI1Mzg0ODA5._V1_FMjpg_UX1000_.jpg', description: 'test'},
+    {id:8, name: 'Kim Possible', specialty: 'Baddassery', img: 'https://m.media-amazon.com/images/M/MV5BNjVmZDY3ODItOTZiOC00NjAwLTkxMjEtMDQxMzMwMDMzNDJkXkEyXkFqcGdeQXVyMTI1Mzg0ODA5._V1_FMjpg_UX1000_.jpg', description: 'test'},
+    {id:9, name: 'Kim Possible', specialty: 'Baddassery', img: 'https://m.media-amazon.com/images/M/MV5BNjVmZDY3ODItOTZiOC00NjAwLTkxMjEtMDQxMzMwMDMzNDJkXkEyXkFqcGdeQXVyMTI1Mzg0ODA5._V1_FMjpg_UX1000_.jpg', description: 'test'},
+    {id:10, name: 'Kim Possible', specialty: 'Baddassery', img: 'https://m.media-amazon.com/images/M/MV5BNjVmZDY3ODItOTZiOC00NjAwLTkxMjEtMDQxMzMwMDMzNDJkXkEyXkFqcGdeQXVyMTI1Mzg0ODA5._V1_FMjpg_UX1000_.jpg', description: 'test'},
+    {id:12, name: 'Kim Possible', specialty: 'Baddassery', img: 'https://m.media-amazon.com/images/M/MV5BNjVmZDY3ODItOTZiOC00NjAwLTkxMjEtMDQxMzMwMDMzNDJkXkEyXkFqcGdeQXVyMTI1Mzg0ODA5._V1_FMjpg_UX1000_.jpg', description: 'test'},
+    {id:13, name: 'Kim Possible', specialty: 'Baddassery', img: 'https://m.media-amazon.com/images/M/MV5BNjVmZDY3ODItOTZiOC00NjAwLTkxMjEtMDQxMzMwMDMzNDJkXkEyXkFqcGdeQXVyMTI1Mzg0ODA5._V1_FMjpg_UX1000_.jpg', description: 'test'},
+
 ]
 
 externals.getSpies = function() {
+    view.prependFilterBar();
     internals.spies.forEach(spy => view.render(spy));
 }
 
