@@ -22,7 +22,11 @@ internals.spies = [
 
 externals.getSpies = function() {
     view.prependFilterBar();
-    internals.spies.forEach(spy => view.render(spy));
+    try {
+       internals.spies.forEach(spy => view.render(spy));
+    } catch(e) {
+        console.log(e.stack);
+    }
 }
 
 export default externals;
