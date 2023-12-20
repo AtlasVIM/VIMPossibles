@@ -10,18 +10,26 @@ internals.createSpyCard = function(spy) {
     </div>
     <div class="spy-card-back">
     <h1> ${spy.name} </h1>
-    <p> ${spy.specialty}</p>
-    <p> ${spy.description}</p>
+    <p> SPECIALTY: ${spy.specialty}</p>
+    <p> Description: <div> ${spy.description}</div></p>
+    <button type="button" class="btn btn-danger hire-button"> HIRE!
+    </button>
     </div>
     </div>
     </span>`
 }
 
+internals.createFilter = function(spy) {
+    return `<li class="filter-parameter-name">${spy.name}</li>`
+}
+
 internals.renderSpy = function(spy) {
     console.log(spy)
     internals.spyCard = internals.createSpyCard(spy);
+    internals.spyFilter = internals.createFilter(spy);
     console.log(internals.spyCard);
     $('#card-container').append(internals.spyCard);
+    $('#filter-parameter').append(internals.spyFilter);
 
 }
 

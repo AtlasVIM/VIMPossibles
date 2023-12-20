@@ -1,7 +1,54 @@
+#main-page {
+    background-color: black;
+}
+
+#page-wrapper {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+#filter-bar {
+    border-radius: 10px;
+    background-color: gray;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    height: 100%;
+    width: 30%;
+    text-align: center;
+    
+}
+
+#filter-parameter {
+    background-color: lightgray;
+    height: 100%;
+    color: black;
+    overflow: scroll;
+    list-style: none;
+}
+
+.filter-parameter-name {
+    font-size: 20px;
+    padding: 5px;
+}
+
+#header {
+    border-radius: 10px;
+    background-color: white;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 24px;
+}
+
 #card-container {
     display: flex;
     justify-content: space-around;
+    flex-flow:wrap;
+    width: 70%;
+    border: white;
 }
+
 
 .spy-card {
     background-color: transparent;
@@ -10,6 +57,7 @@
     border: 1px solid #f1f1f1;
     perspective: 1000px;
 }
+
 
 
 .spy-card-inner {
@@ -39,7 +87,7 @@
   }
 
   .spy-card-back {
-    background-color: graygi;
+    background-color: gray;
     color: white;
     transform: rotateY(180deg);
   }
