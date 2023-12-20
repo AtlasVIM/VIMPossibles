@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Vim Possibles.iml" filepath="$PROJECT_DIR$/.idea/Vim Possibles.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Vim Possible project/VimPossibleProject.iml" filepath="$PROJECT_DIR$/Vim Possible project/VimPossibleProject.iml" />
+    </modules>
+  </component>
+</project>
