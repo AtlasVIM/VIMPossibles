@@ -1,0 +1,45 @@
+#card-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.spy-card {
+    background-color: transparent;
+    width: 200px;
+    height: 250px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px;
+}
+
+
+.spy-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.spy-card:hover .spy-card-inner{
+    transform: rotateY(180deg);
+}
+
+.spy-card-front, .spy-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+
+  .spy-card-front {
+    background-color: #bbb;
+    color: black;
+  }
+
+  .spy-card-back {
+    background-color: graygi;
+    color: white;
+    transform: rotateY(180deg);
+  }
