@@ -12,7 +12,7 @@ public class Spy extends ModelClass{
 
     private String lastName;
 
-    private String specialities;
+    private String speciality;
 
     private String description;
 
@@ -54,12 +54,12 @@ public class Spy extends ModelClass{
         this.lastName = lastName;
     }
 
-    public String getSpecialities() {
-        return specialities;
+    public String getSpeciality() {
+        return speciality;
     }
 
-    public void setSpecialities(String specialities) {
-        this.specialities = specialities;
+    public void setSpeciality(String speciality) {
+        this.speciality = speciality;
     }
 
     public int getPrice() {
@@ -69,4 +69,5 @@ public class Spy extends ModelClass{
     public void setPrice(int price) {
         this.price = price;
     }
+
 }
