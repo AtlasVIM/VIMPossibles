@@ -6,7 +6,7 @@ values('Kim', 'Possible', 'Crime solving', 'hello, is my kim being possible', '/
       ('Monique', 'Raven', 'Personal investigator', 'love is in the air, or not...', '/img/monique.png', 300),
       ('Wade', 'TechGuy', 'CyberSecurity', 'Former ode for all cadet', '/img/wade.png', 400);
 
-INSERT INTO Missions (target, description, idSpy)
+INSERT INTO Missions (target, description, spy_id)
 values('Dr Drakken', 'lalalala', 2),
       ('Shego','lolololol',1),
       ('Monkey Fist','ioioioio',3);

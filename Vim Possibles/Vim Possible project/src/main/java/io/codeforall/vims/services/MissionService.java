@@ -1,6 +1,7 @@
 package io.codeforall.vims.services;
 
 import io.codeforall.vims.Jpa.JpaMissionDao;
+import io.codeforall.vims.Jpa.JpaSpyDao;
 import io.codeforall.vims.Persistence.Mission;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,10 +13,15 @@ import java.util.Optional;
 @Service
 public class MissionService {
     private JpaMissionDao missionDao;
+    private JpaSpyDao spyDao;
 
     @Autowired
     public void setMissionDao(JpaMissionDao missionDao) {
         this.missionDao = missionDao;
+    }
+    @Autowired
+    public void setSpyDao(JpaSpyDao spyDao) {
+        this.spyDao = spyDao;
     }
 
 
