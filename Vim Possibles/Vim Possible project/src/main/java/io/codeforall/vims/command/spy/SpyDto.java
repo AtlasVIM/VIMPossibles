@@ -32,7 +32,7 @@ public class SpyDto {
     private String descriptionDTO;
 
     @NotNull(message = "Price is mandatory") //annotations for forms validations
-    @NotBlank(message = "Price is mandatory")//annotations for forms validations
+    //@NotBlank(message = "Price is mandatory")//annotations for forms validations
     private Integer priceDTO;
 
     private String imgURLDTO;
