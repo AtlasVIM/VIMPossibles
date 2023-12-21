@@ -17,6 +17,6 @@
 
 
     <import resource="Persistence.xml"/>
-    <import resource="presentation.xml"/>
+  <!--  <import resource="presentation.xml"/>  -->
 
 </beans>
