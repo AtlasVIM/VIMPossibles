@@ -20,12 +20,13 @@ const externals = {}
 
 ]*/
 
-internals.getIDS = 
-internals.spies = fetch('http://127.0.0.1:8080/vimPossibles/api/spy/').then( (result) => result.json());
+
 
 externals.getSpies = function() {
   //  view.prependFilterBar();
     try {
+        $('#card-container').empty();
+    internals.spies = fetch('http://127.0.0.1:8080/vimPossibles/api/spy/').then( (result) => result.json());
        internals.spies.then((response => response.forEach(spy => view.render(spy))));
     } catch(e) {
         console.log(e.stack);
