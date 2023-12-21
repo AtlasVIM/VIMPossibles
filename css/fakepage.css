@@ -1,0 +1,74 @@
+div.gallery{
+    margin: 60px;
+    border: 3px solid  black;
+    float: left;
+    width: 300px;
+    background-color: white;
+    
+}
+
+.bck{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#title{
+    text-align: center;
+    font-size: 50px;
+    text-shadow: 2px 2px 5px white;
+    background-color: white;
+    width: 300px;
+    opacity: 90%;
+    border-radius: 20%;
+    
+
+}
+
+div.gallery:hover{
+    border: 1px solid black;
+}
+
+div.gallery img{
+    width: 100%;
+    height: auto;
+    
+}
+
+div.desc{
+    padding:20px;
+    text-align: center;
+    font-size: 35px;
+    color: black;
+}
+
+#container{
+    height: 700px;
+    margin: 50px;
+    border: grey;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    background-color: rgb(232, 9, 9);
+    border-radius: 20%;
+
+}
+
+#app{
+    margin: 100px;
+}
+
+#logo{
+    height: 1em;
+    position: relative;
+    top: 8px;
+
+}
+
+body {
+    background: url('https://c4.wallpaperflare.com/wallpaper/942/1023/763/pokemon-video-games-retro-games-wallpaper-preview.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    height: 100vh; 
+  }
+  
