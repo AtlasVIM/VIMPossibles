@@ -13,7 +13,7 @@ import java.util.List;
 @Repository
 public class JpaSpyDao implements Daos<Spy> {
 
-    protected Class <Spy> spy;
+    protected Class <Spy> spy = Spy.class;
 
     @PersistenceContext
     protected EntityManager em;
@@ -30,6 +30,7 @@ public class JpaSpyDao implements Daos<Spy> {
         return em.createQuery("from " + spy.getSimpleName(), spy).getResultList();
     }
 
+    @Override
     public Spy findById(Integer id) {
         return em.find(spy, id);
     }
