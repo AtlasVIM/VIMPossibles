@@ -27,7 +27,7 @@ internals.hashCheck = function() {
 
     if (!routeName) {
         routeName = internals.defaultRoute;
-        window.location.hash = internal.routes[internals.defaultRoute].hash;
+        window.location.hash = internals.routes[internals.defaultRoute].hash;
     }
 
     internals.loadController(internals.routes[routeName].controller);
