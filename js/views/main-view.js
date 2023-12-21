@@ -33,17 +33,54 @@ internals.createSpyCardDetails = function(spy) {
     </div>
     <form>
     <h2>REQUEST AN AGENT:</h2>
-    <label for="fname">First name:</label><br>
-    <input type="text" id="fname" name="fname"><br>
-    <label for="lname">Last name:</label><br>
-    <input type="text" id="lname" name="lname"><br>  
+    <label for="target">Target:</label><br>
+    <input type="text" id="target" name="target"><br>
     <label for="request-description">Request Description:</label><br>
     <textarea type="text" id="request-description" name="request-description"></textarea><br>
     <button type="button" id="request-agent-button-${spy.id}" class="btn btn-light">REQUEST</button>
     </form>
+    <table class="table table-dark table-striped table-bordered border-light">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Target</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody id="table-row-missions">
+
+    </tbody>
+  </table>
     </div>
     `
 }
+
+internals.renderMissions = function(mission) {
+    console.log(mission);
+    internals.missionRow =`<tr>
+    <th scope="row">${mission.id}</th>
+    <td>${mission.target}</td>
+    <td>${mission.description}</td>
+  </tr>`;
+  $('#table-row-missions').append(internals.missionRow);
+}
+
+
+
+internals.createMissions = function(spy) {
+    console.log(spy)
+    try{
+        
+        $('#table-row-missions').empty();
+         internals.missions = fetch(`http://127.0.0.1:8080/vimPossibles/api/spy/${spy.id}/mission`)
+        .then((response) => response.json())
+        .then(response => response.forEach((mission) => internals.renderMissions(mission)))
+        .catch((e) => console.log(e.stack));
+} catch(e) {
+    console.log(e.stack);
+}
+}
+
 
 internals.createFilter = function(spy) {
     return `<li class="filter-parameter-name"><button type="button" class="btn btn-warning"> ${spy.name}</button></li>`
@@ -51,8 +88,17 @@ internals.createFilter = function(spy) {
 
 internals.bindRequestButton = function(spy) {
     const button = document.getElementById(`request-agent-button-${spy.id}`);
-    button.addEventListener('click',() => {
-        return internals.renderCardDetails(spy);
+    button.addEventListener('click',function() {
+
+        fetch(`http://127.0.0.1:8080/vimPossibles/api/spy/${spy.id}/mission` ,  {
+            headers: { "Content-Type": "application/json; charset=utf-8" },
+            method: 'POST',
+            body: JSON.stringify({
+              target: $('#target').val(),
+              description: $('#request-description').val()
+            }) 
+        }).catch((e)=> console.log(e.stack));
+        internals.createMissions(spy);
     })
 }
 
@@ -93,8 +139,9 @@ internals.renderCardDetails = function(spy) {
         
         page.append(internals.createSpyCardDetails(spy));
         internals.bindBackButton();
-    internals.bindRequestButton(spy);
-    return 
+        internals.bindRequestButton(spy);
+        page.append(internals.createMissions(spy));
+    return; 
 }
 
 

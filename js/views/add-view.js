@@ -14,7 +14,11 @@ internals.createForm = function() {
     <label for="lname">Last name:</label><br>
     <input type="text" id="lname" name="lname"><br>  
     <label for="specialty">Specialty:</label><br>
-    <input type="text" id="specialty" name="specialty"></input><br>
+    <input type="text" id="specialty" name="specialty"></input><br> 
+    <label for="img-url">Image URL:</label><br>
+    <input type="text" id="img-url" name="img-url"></input><br>
+    <label for="price">Price:</label><br>
+    <input type="text" id="price" name="price"></input><br>
     <label for="description">Description:</label><br>
     <textarea type="text" id="description" name="description"></textarea><br>
     <button type="button" id="request-agent-button" class="btn btn-warning">REGISTER</button>
@@ -32,18 +36,18 @@ internals.bindRegister = function() {
         headers: { "Content-Type": "application/json; charset=utf-8" },
         method: 'POST',
         body: JSON.stringify({
-          firstNameDTO: 'Elon Musk',
-          lastNameDTO: 'elonmusk@gmail.com',
-          specialityDTO: 'hello',
-          imgURLDTO: 'img/Rufus.png',
-          descriptionDTO: 'des',
-          priceDTO: '200'
+          firstNameDTO: $('#fname').val(),
+          lastNameDTO: $('#lname').val(),
+          specialityDTO: $('#specialty').val(),
+          imgURLDTO:  $('#img-url').val()|| '/img/anon.jpeg',
+          descriptionDTO: $('#description').val(),
+          priceDTO: $('#price').val()
         }) 
-    }).then((response) => console.log(response))
-        mainService.getSpies();
+    }).then((response) => console.log(response)).catch((e)=> console.log(e.stack));
     $('#page-container').prepend(internals.addAddButton);
-        mainController.bindAddButton();
-        document.getElementById('add-agent-form').remove();  
+    mainController.bindAddButton();
+    document.getElementById('add-agent-form').remove();  
+    mainService.getSpies();
        
     })
   
