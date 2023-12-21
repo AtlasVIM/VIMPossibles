@@ -1,12 +1,12 @@
 import mainService from '../services/main-service.js'
+import mainController from '../controllers/main-controller.js'
 
 const internals = {}
 const externals = {}
 
 
 internals.createForm = function() {
-    document.getElementById('page-wrapper').style.display = "none";
-    document.getElementById('add-agent-button').style.display ="none";
+    $('#add-agent-button').remove();
     return `<form id="add-agent-form">
     <h2>Register an Agent:</h2>
     <label for="fname">First name:</label><br>
@@ -15,29 +15,43 @@ internals.createForm = function() {
     <input type="text" id="lname" name="lname"><br>  
     <label for="specialty">Specialty:</label><br>
     <input type="text" id="specialty" name="specialty"></input><br>
-    <label for="Description">Description:</label><br>
+    <label for="description">Description:</label><br>
     <textarea type="text" id="description" name="description"></textarea><br>
-    <button type="button" id="request-agent-button" class="btn">REQUEST</button>
-    </form>
-    <button id="form-back-button">GO BACK</button>`
+    <button type="button" id="request-agent-button" class="btn">REGISTER</button>
+    <button id="form-back-button">GO BACK</button>
+    </form>`
 }
 
 internals.addAddButton = function() {
-    
+    return '<button id="add-agent-button">Add Agent</button>'
+}
+
+internals.bindRegister = function() {
+    document.getElementById('request-agent-button').addEventListener('click', function() {
+
+    $('#page-container').prepend(internals.addAddButton);
+        mainController.bindAddButton();
+        document.getElementById('add-agent-form').remove();
+    })
 }
 
 internals.bindBackButton = function() {
 
-    $('#form-back-button').on('click', function() {
+    document.getElementById('form-back-button').addEventListener('click', function() {
         console.log('hole')
-        document.getElementById('page-wrapper').style.display = "block";
-        return mainService.getSpies();
+        $('#page-container').prepend(internals.addAddButton);
+        mainController.bindAddButton();
+        document.getElementById('add-agent-form').remove();
+
+        return;
     })
 }
 
 externals.render = function() {
     const form = internals.createForm();
-    $('#page-container').append(form);
+    $('#page-container').prepend(form);
+    internals.bindBackButton();
+    internals.bindRegister();
 }
 
 export default externals;

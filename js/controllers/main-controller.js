@@ -6,7 +6,7 @@ const internals = {}
 const externals = {}
 
 
-internals.bindAddButton = function() {
+externals.bindAddButton = function() {
     const button = document.getElementById('add-agent-button')
     button.addEventListener('click', () => {
         addService.add();
@@ -14,7 +14,7 @@ internals.bindAddButton = function() {
 }
 
 externals.start = function() {
-    internals.bindAddButton();
+    externals.bindAddButton();
     service.getSpies();
 }
 
