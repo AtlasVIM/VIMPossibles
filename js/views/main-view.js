@@ -7,11 +7,11 @@ internals.createSpyIcon = function(spy) {
     return `<span class="spy-card"> 
     <div class= "spy-card-inner">
     <div class="spy-card-front">
-    <img width=200 height=250 src= "${spy.img}"/>
+    <img width=200 height=250 src= "${spy.imgURLDTO}"/>
     </div>
     <div class="spy-card-back">
-    <h1> ${spy.name} </h1>
-    <p> SPECIALTY: ${spy.specialty}</p>
+    <h1> ${spy.firstNameDTO} ${spy.lastNameDTO}</h1>
+    <p> SPECIALTY: ${spy.specialityDTO}</p>
     <button type="button" class="btn btn-danger" id="hire-button-${spy.id}"> 
     HIRE!
     </button>
@@ -22,12 +22,13 @@ internals.createSpyIcon = function(spy) {
 
 internals.createSpyCardDetails = function(spy) {
     return `<div id="spy-card-details-container">
-    <img id="spy-details-img" width=300 height=400 src="${spy.img}"/>
+    <img id="spy-details-img" width=300 height=400 src="${spy.imgURLDTO}"/>
     <div id="spy-card-details">
     <span id="spy-details">
-    <h1> ${spy.name} </h1>
-    <p><strong> Specialty: ${spy.specialty}</strong></p>
-    <p> Description: <div> ${spy.description}</div></p>
+    <h1> ${spy.firstNameDTO} ${spy.lastNameDTO}</h1>
+    <p><strong> Specialty: ${spy.specialityDTO}</strong></p>
+    <p> Description: <div> ${spy.descriptionDTO}</div></p>
+    <p> Price: <div> ${spy.priceDTO}</div></p>
     </span>
     </div>
     <form>
@@ -38,7 +39,7 @@ internals.createSpyCardDetails = function(spy) {
     <input type="text" id="lname" name="lname"><br>  
     <label for="request-description">Request Description:</label><br>
     <textarea type="text" id="request-description" name="request-description"></textarea><br>
-    <button type="button" id="request-agent-button" class="btn">REQUEST</button>
+    <button type="button" id="request-agent-button-${spy.id}" class="btn">REQUEST</button>
     </form>
     </div>
     `
@@ -48,6 +49,12 @@ internals.createFilter = function(spy) {
     return `<li class="filter-parameter-name"><button type="button" class="btn"> ${spy.name}</button></li>`
 }
 
+internals.bindRequestButton = function(spy) {
+    const button = document.getElementById(`request-agent-button-${spy.id}`);
+    button.addEventListener('click',() => {
+        return internals.renderCardDetails(spy);
+    })
+}
 
 internals.bindHireButton = function(spy) {
     const button = document.getElementById(`hire-button-${spy.id}`);
@@ -86,7 +93,7 @@ internals.renderCardDetails = function(spy) {
         
         page.append(internals.createSpyCardDetails(spy));
         internals.bindBackButton();
-
+    internals.bindRequestButton(spy);
     return 
 }
 

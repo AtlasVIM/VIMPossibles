@@ -1,4 +1,5 @@
 INSERT INTO Spies(firstName, lastName, speciality, description, imgURL, price)
+
 values('Kim', 'Possible', 'Crime solving', 'hello, is my kim being possible', 'image here', 600),
       ('Ron', 'Stoppable', 'nachos', 'hello, im ron', 'image here', '10'),
       ('Rufus', 'bald', 'animal crime solving', '*adorable mouse noises', 'image here', 100),
@@ -9,3 +10,4 @@ INSERT INTO Missions (target, description, idSpy)
 values('Dr Drakken', 'lalalala', 2),
       ('Shego','lolololol',1),
       ('Monkey Fist','ioioioio',3);
+
