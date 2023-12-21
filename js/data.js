@@ -25,7 +25,7 @@
         {
             "sprites": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/150.png",
             
-            "name": "Miutiu",
+            "name": "Miutu",
 
             "url": "https://www.pokemon.com/br/pokedex/mewtwo"
         },       
@@ -60,7 +60,7 @@
         {
             "sprites": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
             
-            "name": "Charumanda",
+            "name": "Charmanda",
 
             "url": "https://www.pokemon.com/br/pokedex/charmander"
         },        

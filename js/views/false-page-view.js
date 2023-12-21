@@ -6,8 +6,8 @@
 
     internals.createPokéCard = function(poke) {
             
-        return '<div class="gallery">' + '<a href="' +poke.url + '">' + 
-        '<img src="' + poke.sprites + '" width="300" height="400" ></img>' +
+        return '<div class="gallery">' + '<a href="' +poke.url + '" div="url">' + 
+        '<img src="' + poke.sprites + '" width="300" height="400" ></img>' + 
         '<div class="desc">' + poke.name + '</div>' +
         '</div>';
     };
