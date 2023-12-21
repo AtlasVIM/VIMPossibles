@@ -48,7 +48,8 @@
                 <entry key="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
                 <!-- Run as create once to initialize the schema -->
                 <!--<entry key="hibernate.hbm2ddl.auto" value="validate"/>-->
-                <entry key="hibernate.hbm2ddl.import_files" value="db/.sql"/>
+                <entry key="hibernate.hbm2ddl.auto" value="create"/>
+                <entry key="hibernate.hbm2ddl.import_files" value="db/data.sql"/>
                 <entry key="hibernate.hbm2ddl.import_files_sql_extractor"
                        value="org.hibernate.tool.hbm2ddl.MultipleLinesSqlCommandExtractor"/>
 
