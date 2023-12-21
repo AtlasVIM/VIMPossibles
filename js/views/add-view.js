@@ -28,11 +28,25 @@ internals.addAddButton = function() {
 
 internals.bindRegister = function() {
     document.getElementById('request-agent-button').addEventListener('click', function() {
-
+    fetch('http://127.0.0.1:8080/vimPossibles/api/spy/' ,  {
+        headers: { "Content-Type": "application/json; charset=utf-8" },
+        method: 'POST',
+        body: JSON.stringify({
+          firstNameDTO: 'Elon Musk',
+          lastNameDTO: 'elonmusk@gmail.com',
+          specialityDTO: 'hello',
+          imgURLDTO: 'img/Rufus.png',
+          descriptionDTO: 'des',
+          priceDTO: '200'
+        }) 
+    }).then((response) => console.log(response))
+        mainService.getSpies();
     $('#page-container').prepend(internals.addAddButton);
         mainController.bindAddButton();
-        document.getElementById('add-agent-form').remove();
+        document.getElementById('add-agent-form').remove();  
+       
     })
+  
 }
 
 internals.bindBackButton = function() {
