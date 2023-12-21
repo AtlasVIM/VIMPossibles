@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="VimPossibleProject:war">
+    <output-path>$PROJECT_DIR$/Vim Possible project/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>VimPossibleProject</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="Vim Possibles.war">
+      <element id="artifact" artifact-name="VimPossibleProject:war exploded" />
+    </root>
+  </artifact>
+</component>
