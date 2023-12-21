@@ -12,7 +12,7 @@ internals.createSpyIcon = function(spy) {
     <div class="spy-card-back">
     <h1> ${spy.firstNameDTO} ${spy.lastNameDTO}</h1>
     <p> SPECIALTY: ${spy.specialityDTO}</p>
-    <button type="button" class="btn btn-danger" id="hire-button-${spy.idDTO}"> 
+    <button type="button" class="btn btn-danger" id="hire-button-${spy.id}"> 
     HIRE!
     </button>
     </div>
@@ -50,14 +50,14 @@ internals.createFilter = function(spy) {
 }
 
 internals.bindRequestButton = function(spy) {
-    const button = document.getElementById(`request-agent-button-${spy.idDTO}`);
+    const button = document.getElementById(`request-agent-button-${spy.id}`);
     button.addEventListener('click',() => {
         return internals.renderCardDetails(spy);
     })
 }
 
 internals.bindHireButton = function(spy) {
-    const button = document.getElementById(`hire-button-${spy.idDTO}`);
+    const button = document.getElementById(`hire-button-${spy.id}`);
 
     button.addEventListener('click',() => {
         return internals.renderCardDetails(spy)

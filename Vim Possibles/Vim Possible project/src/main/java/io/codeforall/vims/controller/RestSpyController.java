@@ -42,9 +42,9 @@ public class RestSpyController {
     }
 
     @RequestMapping(method = RequestMethod.GET, path = {"/",""})
-    public ResponseEntity<List<Spy>> listSpy(){
-        List<Spy> spyDtos = spyService.list().stream()
-                //.map(spy -> spyToDto.convertToDto(spy))
+    public ResponseEntity<List<SpyDto>> listSpy(){
+        List<SpyDto> spyDtos = spyService.list().stream()
+                .map(spy -> spyToDto.convertToDto(spy))
                 .collect(Collectors.toList());
         return new ResponseEntity<>(spyDtos, HttpStatus.OK);
     }
