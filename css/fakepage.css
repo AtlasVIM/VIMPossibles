@@ -43,13 +43,15 @@ div.desc{
 }
 
 #container{
-    height: 700px;
-    margin: 50px;
+    height: 50%;
+    width: 50%;
+    position: relative;
     border: grey;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     background-color: rgb(232, 9, 9);
-    border-radius: 20%;
+    border-radius: 1%;
+    background: url('https://cdn.dribbble.com/userupload/3875672/file/original-42f52449520e8e7940c668566888d84f.png?resize=1504x1128')
 
 }
 
