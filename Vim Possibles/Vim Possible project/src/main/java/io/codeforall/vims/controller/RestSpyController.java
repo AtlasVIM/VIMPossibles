@@ -1,8 +1,8 @@
 package io.codeforall.vims.controller;
 import io.codeforall.vims.Persistence.Spy;
-import io.codeforall.vims.command.DtoToSpy;
-import io.codeforall.vims.command.SpyDto;
-import io.codeforall.vims.command.SpyToDto;
+import io.codeforall.vims.command.spy.DtoToSpy;
+import io.codeforall.vims.command.spy.SpyDto;
+import io.codeforall.vims.command.spy.SpyToDto;
 import io.codeforall.vims.services.SpyService;
 import org.hibernate.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
