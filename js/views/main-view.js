@@ -38,7 +38,7 @@ internals.createSpyCardDetails = function(spy) {
     <input type="text" id="lname" name="lname"><br>  
     <label for="request-description">Request Description:</label><br>
     <textarea type="text" id="request-description" name="request-description"></textarea><br>
-    <button type="button" id="request-agent-button" class="btn">REQUEST</button>
+    <button type="button" id="request-agent-button-${spy.id}" class="btn">REQUEST</button>
     </form>
     </div>
     `
@@ -48,6 +48,12 @@ internals.createFilter = function(spy) {
     return `<li class="filter-parameter-name"><button type="button" class="btn"> ${spy.name}</button></li>`
 }
 
+internals.bindRequestButton = function(spy) {
+    const button = document.getElementById(`request-agent-button-${spy.id}`);
+    button.addEventListener('click',() => {
+        return internals.renderCardDetails(spy);
+    })
+}
 
 internals.bindHireButton = function(spy) {
     const button = document.getElementById(`hire-button-${spy.id}`);
@@ -86,7 +92,7 @@ internals.renderCardDetails = function(spy) {
         
         page.append(internals.createSpyCardDetails(spy));
         internals.bindBackButton();
-
+    internals.bindRequestButton(spy);
     return 
 }
 

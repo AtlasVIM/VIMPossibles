@@ -38,7 +38,6 @@ internals.bindRegister = function() {
 internals.bindBackButton = function() {
 
     document.getElementById('form-back-button').addEventListener('click', function() {
-        console.log('hole')
         $('#page-container').prepend(internals.addAddButton);
         mainController.bindAddButton();
         document.getElementById('add-agent-form').remove();
