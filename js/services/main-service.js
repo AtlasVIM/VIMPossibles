@@ -20,8 +20,10 @@ internals.spies = [
 
 ]
 
+// internals.spies = fetch('127.0.0.1:8080/vimPossibles/api/spy/');
+
 externals.getSpies = function() {
-    view.prependFilterBar();
+  //  view.prependFilterBar();
     try {
        internals.spies.forEach(spy => view.render(spy));
     } catch(e) {
