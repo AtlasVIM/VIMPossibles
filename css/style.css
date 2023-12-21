@@ -1,5 +1,7 @@
 #main-page {
-    background-color: black;
+    background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/90abac18-0337-41ab-898b-4067e7bf9542/dsen2x-b598bca3-e19a-4c97-9fa3-fa13f626111f.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzkwYWJhYzE4LTAzMzctNDFhYi04OThiLTQwNjdlN2JmOTU0MlwvZHNlbjJ4LWI1OThiY2EzLWUxOWEtNGM5Ny05ZmEzLWZhMTNmNjI2MTExZi5qcGcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.fwv4BjekpW6Xb4MO5586kBQW_20teS4TPEEmonTRxnI');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 #page-wrapper {
