@@ -10,7 +10,7 @@
 
   <display-name>Archetype Created Web Application</display-name>
 
-<<<<<<< HEAD
+
 
 <servlet>
 <servlet-name>dispatcherServlet</servlet-name>
@@ -34,19 +34,3 @@
 
 
 </web-app>
-=======
-  <servlet>
-    <servlet-name>dispatcherServlet</servlet-name>
-    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-    <init-param>
-      <param-name>contextConfigLocation</param-name>
-      <param-value>WEB-INF/Spring/spring-config.xml</param-value>
-    </init-param>
-  </servlet>
-
-  <servlet-mapping>
-    <servlet-name>dispatcherServlet</servlet-name>
-    <url-pattern>/</url-pattern>
-  </servlet-mapping>
-</web-app>
->>>>>>> sprint-4

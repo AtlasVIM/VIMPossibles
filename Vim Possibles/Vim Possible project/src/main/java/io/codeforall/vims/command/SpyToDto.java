@@ -10,6 +10,7 @@ public class SpyToDto {
 
     public SpyDto convertToDto(Spy spy){
         spyDto = new  SpyDto();
+        spyDto.setId(spy.getId());
         spyDto.setFirstNameDTO(spy.getFirstName());
         spyDto.setLastNameDTO(spy.getLastName());
         spyDto.setSpecialityDTO(spy.getSpeciality());

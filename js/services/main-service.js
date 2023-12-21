@@ -4,7 +4,7 @@ import view from '../views/main-view.js'
 const internals = {}
 const externals = {}
 
-internals.spies = [
+/*internals.spies = [
     {id:1, name: 'Kim Possible', specialty: 'Baddassery', img: 'https://m.media-amazon.com/images/M/MV5BNjVmZDY3ODItOTZiOC00NjAwLTkxMjEtMDQxMzMwMDMzNDJkXkEyXkFqcGdeQXVyMTI1Mzg0ODA5._V1_FMjpg_UX1000_.jpg', description: 'test'},
     {id:2, name: 'Kim Possible', specialty: 'Baddassery', img: 'https://m.media-amazon.com/images/M/MV5BNjVmZDY3ODItOTZiOC00NjAwLTkxMjEtMDQxMzMwMDMzNDJkXkEyXkFqcGdeQXVyMTI1Mzg0ODA5._V1_FMjpg_UX1000_.jpg', description: 'test'},
     {id:3, name: 'Kim Possible', specialty: 'Baddassery', img: 'https://m.media-amazon.com/images/M/MV5BNjVmZDY3ODItOTZiOC00NjAwLTkxMjEtMDQxMzMwMDMzNDJkXkEyXkFqcGdeQXVyMTI1Mzg0ODA5._V1_FMjpg_UX1000_.jpg', description: 'test'},
@@ -18,14 +18,15 @@ internals.spies = [
     {id:12, name: 'Kim Possible', specialty: 'Baddassery', img: 'https://m.media-amazon.com/images/M/MV5BNjVmZDY3ODItOTZiOC00NjAwLTkxMjEtMDQxMzMwMDMzNDJkXkEyXkFqcGdeQXVyMTI1Mzg0ODA5._V1_FMjpg_UX1000_.jpg', description: 'test'},
     {id:13, name: 'Kim Possible', specialty: 'Baddassery', img: 'https://m.media-amazon.com/images/M/MV5BNjVmZDY3ODItOTZiOC00NjAwLTkxMjEtMDQxMzMwMDMzNDJkXkEyXkFqcGdeQXVyMTI1Mzg0ODA5._V1_FMjpg_UX1000_.jpg', description: 'test'},
 
-]
+]*/
 
-// internals.spies = fetch('127.0.0.1:8080/vimPossibles/api/spy/');
+internals.getIDS = 
+internals.spies = fetch('http://127.0.0.1:8080/vimPossibles/api/spy/').then( (result) => result.json());
 
 externals.getSpies = function() {
   //  view.prependFilterBar();
     try {
-       internals.spies.forEach(spy => view.render(spy));
+       internals.spies.then((response => response.forEach(spy => view.render(spy))));
     } catch(e) {
         console.log(e.stack);
     }
