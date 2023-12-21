@@ -17,13 +17,13 @@ internals.createForm = function() {
     <input type="text" id="specialty" name="specialty"></input><br>
     <label for="description">Description:</label><br>
     <textarea type="text" id="description" name="description"></textarea><br>
-    <button type="button" id="request-agent-button" class="btn">REGISTER</button>
-    <button id="form-back-button">GO BACK</button>
+    <button type="button" id="request-agent-button" class="btn btn-warning">REGISTER</button>
+    <button type="button" class="btn btn-light" id="form-back-button">GO BACK</button>
     </form>`
 }
 
 internals.addAddButton = function() {
-    return '<button id="add-agent-button">Add Agent</button>'
+    return '<button type="button" class="btn btn-warning" id="add-agent-button">Add Agent</button>'
 }
 
 internals.bindRegister = function() {

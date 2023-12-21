@@ -12,7 +12,7 @@ internals.createSpyIcon = function(spy) {
     <div class="spy-card-back">
     <h1> ${spy.firstNameDTO} ${spy.lastNameDTO}</h1>
     <p> SPECIALTY: ${spy.specialityDTO}</p>
-    <button type="button" class="btn btn-danger" id="hire-button-${spy.id}"> 
+    <button type="button" class="btn btn-warning" id="hire-button-${spy.id}"> 
     HIRE!
     </button>
     </div>
@@ -27,8 +27,8 @@ internals.createSpyCardDetails = function(spy) {
     <span id="spy-details">
     <h1> ${spy.firstNameDTO} ${spy.lastNameDTO}</h1>
     <p><strong> Specialty: ${spy.specialityDTO}</strong></p>
-    <p> Description: <div> ${spy.descriptionDTO}</div></p>
-    <p> Price: <div> ${spy.priceDTO}</div></p>
+    <p><strong> Description: </strong><div> ${spy.descriptionDTO}</div></p>
+    <p><strong> Price: </strong><div> ${spy.priceDTO}</div></p>
     </span>
     </div>
     <form>
@@ -39,14 +39,14 @@ internals.createSpyCardDetails = function(spy) {
     <input type="text" id="lname" name="lname"><br>  
     <label for="request-description">Request Description:</label><br>
     <textarea type="text" id="request-description" name="request-description"></textarea><br>
-    <button type="button" id="request-agent-button-${spy.id}" class="btn">REQUEST</button>
+    <button type="button" id="request-agent-button-${spy.id}" class="btn btn-light">REQUEST</button>
     </form>
     </div>
     `
 }
 
 internals.createFilter = function(spy) {
-    return `<li class="filter-parameter-name"><button type="button" class="btn"> ${spy.name}</button></li>`
+    return `<li class="filter-parameter-name"><button type="button" class="btn btn-warning"> ${spy.name}</button></li>`
 }
 
 internals.bindRequestButton = function(spy) {
@@ -65,7 +65,7 @@ internals.bindHireButton = function(spy) {
 }
 
 internals.renderBackButton = function() {
-    return `<button id="back-button" class="btn">GO BACK</button>`
+    return `<button id="back-button" class="btn btn-light">GO BACK</button>`
 }
 
 internals.renderFilterBar = function() {
